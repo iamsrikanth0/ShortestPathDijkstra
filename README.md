@@ -9,3 +9,4 @@ We do this till we tranverse all the neighbours, this can be tracked using Viste
 Try dry run to get clear picture. 
 Intialization= create a PQ baseed on dst, dst array (include starting point distance), visited array
 Pro tip: Whenever we need two values to validat everytim, create a Class for it. Here Node and Wt is needed everytime, so we shall create one.
+O(E+ ElogV)- ElogV is for PQ sorting internally. 
