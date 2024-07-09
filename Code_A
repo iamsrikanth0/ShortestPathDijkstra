@@ -109,3 +109,37 @@ public class Short {
         dijkstra(grpah, 0, V);
     }
 }
+
+
+//dijkstra fails for negative weights (uses greedy approach)- anni negative aypothay weights
+// So wheneever negative weeights are involved, use bellman ford algorithm (uses Dynamic Programming approach),time complexity is high
+// We perform relaxation V-1 times- O(V.E). V-1 times outer loop, E edges tranverse
+//
+public static void bellmanFord(ArrayList<Edge> graph[], int src, int V){
+int dist[] = new int[V];
+        // Initialize all distances to Max value xpct the source(starting point)
+        for(int i=0, i< V; i++){
+            if(i!=src){
+                dist[i]= Integer.MAX_VALUE;
+            }
+        }
+
+for (int k=0; k<V-1; K++){//O(V)- V-1 times 
+
+for( int i=0; i< V; i++){ //Nodes and neighbours kosam
+for (int j=0; j< graph[i].size(); j++){
+Edge e= graph[i].get[j];
+int u = e.src;
+int v = e.dst;
+if (dist[u] != Integer.MAX_VALUE && dist[u]+ e.wt < dist[v]){ //infinity undi kada problem aythadi
+                    dist[v] = dist[u]+ e.wt;
+}
+ for (int i=0; i<V; i++){
+            Sytem.out.print(dist[i]+ " ");
+         }
+}
+}
+
+>> Bellman for doesnot work for Negative weight cycle a+b+c < 0
+>> V-1 kanna inko sari ekkuva perform chesinav and values update avthunay ante Negative weight cycle annatte.
+>> Why only V-1 , oka place nuchi inko place podaniki , max V-1 nodes eh longest avthundi. 
