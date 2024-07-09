@@ -87,6 +87,7 @@ public class Short {
 
                  if (dist[u]+ e.wt < dist[v]){
                     dist[v] = dist[u]+ e.wt;
+                  pq.add(new Pair(v, dist[v]));
                  }
                 }
             }
